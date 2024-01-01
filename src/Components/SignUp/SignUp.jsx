@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import "./SignUp.css";
-const baseurl = "https://joblisting-backend-jmsf.onrender.com"
+// const baseurl = "https://joblisting-backend-jmsf.onrender.com"
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ const SignUp = () => {
       const isValid = validateValues(UserState);
 
       if (isValid) {
-        const response = await axios.post(`${baseurl}/register`, {
+        const response = await axios.post("https://joblisting-backend-jmsf.onrender.com/register", {
           name: UserState.name,
           email: UserState.email,
           mobile: UserState.mobile,

@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./EditJob.css";
 import axios from "axios";
 import { isUserLoggedIn } from "../../utils/utils";
-const baseurl = "https://joblisting-backend-jmsf.onrender.com"
+// const baseurl = "https://joblisting-backend-jmsf.onrender.com"
 
 
 const EditJob = () => {
@@ -27,7 +27,7 @@ const EditJob = () => {
     const fetchJobDetails = async () => {
       try {
         const response = await axios.get(
-          `${baseurl}/viewJob/${jobId}`
+          `https://joblisting-backend-jmsf.onrender.com/viewJob/${jobId}`
         );
         setJobState(response.data.jobPost);
        
@@ -46,7 +46,7 @@ const EditJob = () => {
     try {
       if (isLoggedIn) {
         const response = await axios.put(
-          `${baseurl}/editJob/${jobId}`,
+          `https://joblisting-backend-jmsf.onrender.com/editJob/${jobId}`,
           JobState,
           {
             headers: {

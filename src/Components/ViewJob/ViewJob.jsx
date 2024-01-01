@@ -6,7 +6,7 @@ import axios from "axios";
 import { isUserLoggedIn } from "../../utils/utils";
 import image4 from "../assets/image4.png";
 import image5 from "../assets/image5.png";
-const baseurl = "https://joblisting-backend-jmsf.onrender.com"
+// const baseurl = "https://joblisting-backend-jmsf.onrender.com"
 
 const ViewJob = () => {
   const [jobs, setJobs] = useState({
@@ -35,7 +35,7 @@ const ViewJob = () => {
     const fetchJobs = async () => {
       try {
         const response = await axios.get(
-          `${baseurl}/viewJob/${jobId}`
+          `https://joblisting-backend-jmsf.onrender.com/viewJob/${jobId}`
         );
         setJobs(response.data.jobPost);
       } catch (error) {

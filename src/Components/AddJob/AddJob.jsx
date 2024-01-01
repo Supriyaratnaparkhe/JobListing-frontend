@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./AddJob.css";
 import axios from "axios";
 import { isUserLoggedIn } from "../../utils/utils";
-const baseurl = "https://joblisting-backend-jmsf.onrender.com"
+// const baseurl = "https://joblisting-backend-jmsf.onrender.com"
 
 const AddJob = () => {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ const AddJob = () => {
     try {
       if (isLoggedIn) {
         const response = await axios.post(
-          `${baseurl}/addJob`,
+          "https://joblisting-backend-jmsf.onrender.com/addJob",
           JobState,
           {
             headers: {

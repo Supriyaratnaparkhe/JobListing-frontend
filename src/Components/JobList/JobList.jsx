@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./JobList.css";
 import image3 from "../assets/image3.png";
-const baseurl = "https://joblisting-backend-jmsf.onrender.com"
+// const baseurl = "https://joblisting-backend-jmsf.onrender.com"
 
 const JobList = ({ isLoggedIn }) => {
   const [jobs, setJobs] = useState([]);
@@ -15,7 +15,7 @@ const JobList = ({ isLoggedIn }) => {
     const fetchJobs = async () => {
       try {
         const response = await axios.get(
-          `${baseurl}/listjobs?skills=${selectedSkills.join(
+          `https://joblisting-backend-jmsf.onrender.com/listjobs?skills=${selectedSkills.join(
             ","
           )}&position=${position}`
         );
