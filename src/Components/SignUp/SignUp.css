@@ -1,0 +1,126 @@
+body {
+  overflow: hidden;
+  margin: 0px;
+}
+.container1 {
+  display: flex;
+  justify-content: space-between;
+}
+.image-side {
+  background-image: url("../assets/image1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 445px;
+  height: 630px;
+}
+.image-side .tagline {
+  color: #fff;
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%;
+  margin-top: 30px;
+}
+.signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 100px;
+  margin-top:-50px;
+}
+.heading #h {
+  color: #000;
+  font-family: DM Sans;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 144.023%;
+}
+.heading #p {
+  color: #525252;
+  font-family: DM Sans;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%;
+}
+.input-box {
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid #c2c2c2;
+  background: #fff;
+  margin-top: 10px;
+}
+input,
+select,
+textarea {
+  color: #525252;
+  font-family: DM Sans;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%;
+  padding-left: 10px;
+}
+.checkbox {
+  text-align: left;
+  color: #525252;
+  font-family: DM Sans;
+  font-size: 16.852px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 139.688%;
+  letter-spacing: 0.337px;
+  margin-top: 10px;
+}
+.checkbox input {
+  cursor: pointer;
+}
+.signup-btn {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background: #ed5353;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#signbut {
+  color: #fff;
+  font-family: DM Sans;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 144.023%;
+}
+.rule {
+  color: #525252;
+  font-family: DM Sans;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%;
+}
+.rule span {
+  color: #000;
+  font-family: DM Sans;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 144.023%;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+.error {
+  color: #f00;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 139.688%;
+  letter-spacing: 0.401px;
+  text-align: left;
+}

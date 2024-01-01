@@ -1,0 +1,125 @@
+body {
+    overflow: hidden;
+    margin: 0px;
+  }
+  .container2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  .image-side1 {
+    background-image: url("../assets/image2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 418px;
+    height: 630px;
+  }
+  .image-side1 .tagline1 {
+    color: #fff;
+    text-align: center;
+    font-family: DM Sans;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 144.023%;
+    margin-top: 30px;
+  }
+  .editjob {
+    margin-left: 150px;
+    margin-top: -70px;
+  }
+  .heading1 #h1 {
+    color: #000;
+    font-family: DM Sans;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 144.023%;
+  }
+  table {
+    border-spacing: 10px;
+  }
+  .ele1 {
+    color: #000;
+    font-family: DM Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .input-box1 {
+    width: 438.233px;
+    height: 22px;
+    border-radius: 4.603px;
+    border: 1.841px solid #c2c2c2;
+    background: #fff;
+    margin-left: 50px;
+    font-family: DM Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  select,
+  textarea {
+    font-family: DM Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 10px;
+  }
+  .input-box1::placeholder {
+    color: #adadad;
+    font-family: DM Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  #select-box {
+    width: 100px;
+    height: 25px;
+    margin-left: 50px;
+  }
+  #box2 {
+    height: 75px;
+  }
+  .editjob-btn {
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 6.5px;
+    background: #ed5353;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  #editbut {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 18.077px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .but {
+    float: right;
+  }
+  .cancle-btn {
+    width: 120px;
+    height: 35px;
+    border: none;
+    border-radius: 6.5px;
+    border: 0.848px solid #cecece;
+    background: #fff;
+    cursor: pointer;
+  }
+  #canclebut {
+    color: #c2c2c2;
+    font-family: Roboto;
+    font-size: 18.077px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
