@@ -42,7 +42,7 @@ const SignUp = () => {
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
-  axios.defaults.withCredentials = true;
+  // axios.defaults.withCredentials = true;
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
