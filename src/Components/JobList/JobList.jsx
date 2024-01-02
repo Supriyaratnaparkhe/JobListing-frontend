@@ -10,7 +10,7 @@ const JobList = ({ isLoggedIn }) => {
   const [position, setPosition] = useState("");
   const [selectedSkills, setSelectedSkills] = useState([]);
   const navigate = useNavigate();
-
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     const fetchJobs = async () => {
       try {
