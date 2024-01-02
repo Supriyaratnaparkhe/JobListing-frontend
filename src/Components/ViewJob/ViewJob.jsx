@@ -23,6 +23,7 @@ const ViewJob = () => {
   });
   const [isLoggedIn, setIsLoggedIn] = useState(isUserLoggedIn());
   const { jobId } = useParams();
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     try {
       setIsLoggedIn(isUserLoggedIn());
