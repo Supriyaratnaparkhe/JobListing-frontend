@@ -57,7 +57,8 @@ const Login = () => {
         return response.data;
       }
     } catch (error) {
-      console.error(error.response.data);
+      console.log(error);
+      console.log(error.response.data);
     }
   };
   const handleSignIn = (e) => {
