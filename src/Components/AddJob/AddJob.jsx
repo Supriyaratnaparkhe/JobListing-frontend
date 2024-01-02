@@ -22,7 +22,7 @@ const AddJob = () => {
     about: "",
   });
   const [isLoggedIn] = useState(isUserLoggedIn());
-
+  axios.defaults.withCredentials = true;
   const handleAddJob = async (e) => {
     e.preventDefault();
     try {
