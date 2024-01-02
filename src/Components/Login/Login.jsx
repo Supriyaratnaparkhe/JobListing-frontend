@@ -33,12 +33,14 @@ const Login = () => {
     try {
       e.preventDefault();
       const isValid = validateValues(UserState);
-
-      if (isValid) {
-        const response = await axios.post("https://joblisting-backend-jmsf.onrender.com/login", {
+      const data = JSON.stringify( {
           email: UserState.email,
           password: UserState.password,
           name: UserState.name,
+        })
+      if (isValid) {
+        const response = await axios.post("https://joblisting-backend-jmsf.onrender.com/login",data, {
+        headers: {'Content-Type': 'application/json'}
         });
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("UserName", response.data.recruiterName);
