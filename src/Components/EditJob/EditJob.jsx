@@ -23,7 +23,7 @@ const EditJob = () => {
     about: "",
   });
   const { jobId } = useParams();
-  axios.defaults.withCredentials = true;
+  // axios.defaults.withCredentials = true;
   useEffect(() => {
     const fetchJobDetails = async () => {
       try {
