@@ -16,7 +16,7 @@ const SignUp = () => {
     acceptTerms: false,
   });
   const [errors, setErrors] = useState({});
-
+  const [loading, setLoading] = usestate("Create Account");
   const validateValues = (UserState) => {
     const errors = {};
     if (!UserState.name) {
@@ -47,7 +47,7 @@ const SignUp = () => {
     try {
       e.preventDefault();
       const isValid = validateValues(UserState);
-
+      setLoading("Loading..");
       if (isValid) {
         const response = await axios.post("https://joblisting-backend-jmsf.onrender.com/register", {
           name: UserState.name,
@@ -162,7 +162,7 @@ const SignUp = () => {
             </div>
             <div>
               <button type="submit" className="signup-btn">
-                <div id="signbut">Create Account</div>
+                <div id="signbut">{loading}</div>
               </button>
             </div>
             <div className="rule">
