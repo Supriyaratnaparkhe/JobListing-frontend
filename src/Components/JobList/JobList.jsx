@@ -3,12 +3,14 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./JobList.css";
 import image3 from "../assets/image3.png";
+import Spinner from "../Spinner/Spinner"
 // const baseurl = "https://joblisting-backend-jmsf.onrender.com"
 
 const JobList = ({ isLoggedIn }) => {
   const [jobs, setJobs] = useState([]);
   const [position, setPosition] = useState("");
   const [selectedSkills, setSelectedSkills] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   // axios.defaults.withCredentials = true;
   useEffect(() => {
@@ -22,6 +24,8 @@ const JobList = ({ isLoggedIn }) => {
         setJobs(response.data.jobs);
       } catch (error) {
         console.error("Error fetching jobs:", error.message);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -59,6 +63,8 @@ const JobList = ({ isLoggedIn }) => {
   };
 
   return (
+    <>
+    {!loading ? (
     <div>
       <div className="search-container">
         <div>
@@ -176,6 +182,10 @@ const JobList = ({ isLoggedIn }) => {
         </div>
       </div>
     </div>
+    ) : (
+      loading && <Spinner />
+    )}
+    </>
   );
 };
 
