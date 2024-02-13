@@ -63,7 +63,6 @@ const EditJob = () => {
           pauseOnHover: true,
           draggable: true,
         });
-        navigate(-1);
         console.log("Job edited successfully:", response.data);
       } 
     } catch (error) {
