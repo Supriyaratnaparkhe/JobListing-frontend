@@ -44,7 +44,6 @@ const AddJob = () => {
           pauseOnHover: true,
           draggable: true,
         });
-        navigate(-1);
         console.log("Job added successfully:", response.data);
       } 
     } catch (error) {
