@@ -65,9 +65,7 @@ const EditJob = () => {
         });
         navigate(-1);
         console.log("Job edited successfully:", response.data);
-      } else {
-        navigate("/login");
-      }
+      } 
     } catch (error) {
       console.error(error.response.data);
       if (error.message === "tokenExpired") {
