@@ -46,9 +46,7 @@ const AddJob = () => {
         });
         navigate(-1);
         console.log("Job added successfully:", response.data);
-      } else {
-        navigate("/login");
-      }
+      } 
     } catch (error) {
       console.error(error.response.data);
       if (error.message === "tokenExpired") {
