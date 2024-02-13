@@ -68,7 +68,7 @@ const EditJob = () => {
         }, 1500);
         console.log("Job edited successfully:", response.data);
       } else {
-        navigate("/login");
+        navigate("/");
       }
     } catch (error) {
       console.error(error.response.data);
