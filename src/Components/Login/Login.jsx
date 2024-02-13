@@ -14,7 +14,6 @@ const Login = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [loading, setLoading] = usestate("Sign In");
   const validateValues = (UserState) => {
     const errors = {};
     if (!UserState.email) {
@@ -33,7 +32,6 @@ const Login = () => {
     try {
       e.preventDefault();
       const isValid = validateValues(UserState);
-      setLoading("Loading..");
       if (isValid) {
         const response = await axios.post("https://joblisting-backend-jmsf.onrender.com/login",{
           email: UserState.email,
@@ -112,7 +110,7 @@ const Login = () => {
             </div>
             <div>
               <button type="submit" className="signin-btn">
-                <div id="signbut">{loading}</div>
+                <div id="signbut">Sign In</div>
               </button>
             </div>
             <div className="rule">
