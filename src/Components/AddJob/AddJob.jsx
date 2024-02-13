@@ -49,7 +49,7 @@ const AddJob = () => {
         }, 1500);
         console.log("Job added successfully:", response.data);
       } else {
-        navigate("/login");
+        navigate("/");
       }
     } catch (error) {
       console.error(error.response.data);
