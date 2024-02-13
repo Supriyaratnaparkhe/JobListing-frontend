@@ -6,26 +6,22 @@ import Spinner from "../Spinner/Spinner";
 
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(isUserLoggedIn());
-  const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     try {
       setIsLoggedIn(isUserLoggedIn());
     } catch (error) {
       console.log(error);
-    } finally {
-      setLoading(false);
     }
   }, []);
   return (
     <>
-      {!loading ? (
+     
         <div>
           <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           <JobList isLoggedIn={isLoggedIn} />
         </div>
-      ) : (
-        loading && <Spinner />
-      )}
+      
     </>
   );
 };
