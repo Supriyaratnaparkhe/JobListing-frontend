@@ -44,12 +44,10 @@ const AddJob = () => {
           pauseOnHover: true,
           draggable: true,
         });
-        setTimeout(() => {
-          navigate(-1);
-        }, 1500);
+        navigate(-1);
         console.log("Job added successfully:", response.data);
       } else {
-        navigate("/");
+        navigate("/login");
       }
     } catch (error) {
       console.error(error.response.data);
