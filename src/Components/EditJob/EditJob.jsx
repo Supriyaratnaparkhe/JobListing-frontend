@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./EditJob.css";
 import axios from "axios";
 import { isUserLoggedIn } from "../../utils/utils";
@@ -55,8 +55,15 @@ const EditJob = () => {
             },
           }
         );
-       
-        
+        toast.success("Job Edited successful!", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+        console.log("Job edited successfully:", response.data);
       } 
     } catch (error) {
       console.error(error.response.data);
@@ -229,7 +236,7 @@ const EditJob = () => {
               </button>
             </div>
           </form>
-{/*           <ToastContainer /> */}
+          <ToastContainer />
         </div>
         <div className="image-side1">
           <div className="tagline1">Recruiter Edit job details here</div>
