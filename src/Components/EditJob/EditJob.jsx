@@ -55,14 +55,14 @@ const EditJob = () => {
             },
           }
         );
-        toast.success("Job Edited successful!", {
-          position: "top-center",
-          autoClose: 1000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-        });
+        // toast.success("Job Edited successful!", {
+        //   position: "top-center",
+        //   autoClose: 1000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        // });
         console.log("Job edited successfully:", response.data);
       } 
     } catch (error) {
