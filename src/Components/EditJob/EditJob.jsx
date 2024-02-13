@@ -55,14 +55,7 @@ const EditJob = () => {
             },
           }
         );
-        // toast.success("Job Edited successful!", {
-        //   position: "top-center",
-        //   autoClose: 1000,
-        //   hideProgressBar: false,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        // });
+       
         
       } 
     } catch (error) {
