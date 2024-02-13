@@ -3,8 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./JobList.css";
 import image3 from "../assets/image3.png";
-import Spinner from "../Spinner/Spinner"
-// const baseurl = "https://joblisting-backend-jmsf.onrender.com"
+import Spinner from "../Spinner/Spinner";
 
 const JobList = ({ isLoggedIn }) => {
   const [jobs, setJobs] = useState([]);
@@ -12,7 +11,7 @@ const JobList = ({ isLoggedIn }) => {
   const [selectedSkills, setSelectedSkills] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  // axios.defaults.withCredentials = true;
+
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -64,127 +63,127 @@ const JobList = ({ isLoggedIn }) => {
 
   return (
     <>
-    {!loading ? (
-    <div>
-      <div className="search-container">
+      {!loading ? (
         <div>
-          <form>
-            <input
-              className="nosubmit"
-              id="position"
-              type="search"
-              name="position"
-              value={position}
-              onChange={handlePositionChange}
-              placeholder="Type any job title"
-            />
-          </form>
-        </div>
-        <div className="container2">
-          <div className="skills-container">
-            <div className="select-option">
-              <select
-                id="skills"
-                name="selectedSkills"
-                value={selectedSkills.join(",")}
-                onChange={handleSkillsChange}
-              >
-                <option value="">Skills</option>
-                <option value="html">HTML</option>
-                <option value="css">CSS</option>
-                <option value="js">Javascript</option>
-                <option value="react">React</option>
-                <option value="angular">Angular</option>
-                <option value="c">C</option>
-                <option value="java">Java</option>
-                <option value="python">Python</option>
-              </select>
-            </div>
+          <div className="search-container">
             <div>
-              <div className="selected-skill">
-                {selectedSkills.map((selectedSkill) => (
-                  <div className="display-skill" key={selectedSkill}>
-                    <div className="skill-name">{selectedSkill}</div>
-                    <div className="close">
-                      <button onClick={() => removeSkill(selectedSkill)}>
-                        X
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <form>
+                <input
+                  className="nosubmit"
+                  id="position"
+                  type="search"
+                  name="position"
+                  value={position}
+                  onChange={handlePositionChange}
+                  placeholder="Type any job title"
+                />
+              </form>
             </div>
-          </div>
-          {isLoggedIn ? (
-            <div className="add-job">
-              <button onClick={handleAddJob}> + Add Job</button>
-            </div>
-          ) : (
-            ""
-          )}
-        </div>
-        <div className="clear" onClick={handleclearAll}>
-          clear
-        </div>
-      </div>
-      <div className="jobs-container">
-        <div>
-          {jobs.map((job) => (
-            <div key={job._id} id="job-detail">
-              <div className="job-item">
-                <div className="logo">
-                <img src={job.logoURL} alt="alt" />
+            <div className="container2">
+              <div className="skills-container">
+                <div className="select-option">
+                  <select
+                    id="skills"
+                    name="selectedSkills"
+                    value={selectedSkills.join(",")}
+                    onChange={handleSkillsChange}
+                  >
+                    <option value="">Skills</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">Javascript</option>
+                    <option value="react">React</option>
+                    <option value="angular">Angular</option>
+                    <option value="c">C</option>
+                    <option value="java">Java</option>
+                    <option value="python">Python</option>
+                  </select>
                 </div>
-                <div className="job-details">
-                  <div id="job-position">{job.position}</div>
-
-                  <div id="salary">₹ {job.salary}</div>
-
-                  <div className="job-det1">
-                    <div id="remote">{job.remote}</div>
-                    <div id="jobtype">{job.jobType}</div>
-                  </div>
-                </div>
-                <div className="job-details2">
-                  <div>
-                    <img src={image3} alt="" />
-                  </div>
-                  <div id="location">{job.location}</div>
-                </div>
-                <div className="job-details3">
-                  <div className="skills">
-                    {job.skills.map((skill, index) => (
-                      <div key={index} className="skills-list">
-                        <div id="skills-list">{skill}</div>
+                <div>
+                  <div className="selected-skill">
+                    {selectedSkills.map((selectedSkill) => (
+                      <div className="display-skill" key={selectedSkill}>
+                        <div className="skill-name">{selectedSkill}</div>
+                        <div className="close">
+                          <button onClick={() => removeSkill(selectedSkill)}>
+                            X
+                          </button>
+                        </div>
                       </div>
                     ))}
                   </div>
-                  <div className="job-buttons">
-                    {isLoggedIn ? (
-                      <div id="edit-but">
-                        <Link to={`/editJob/${job._id}`}>
-                          <button>Edit Job</button>
-                        </Link>
+                </div>
+              </div>
+              {isLoggedIn ? (
+                <div className="add-job">
+                  <button onClick={handleAddJob}> + Add Job</button>
+                </div>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="clear" onClick={handleclearAll}>
+              clear
+            </div>
+          </div>
+          <div className="jobs-container">
+            <div>
+              {jobs.map((job) => (
+                <div key={job._id} id="job-detail">
+                  <div className="job-item">
+                    <div className="logo">
+                      <img src={job.logoURL} alt="alt" />
+                    </div>
+                    <div className="job-details">
+                      <div id="job-position">{job.position}</div>
+
+                      <div id="salary">₹ {job.salary}</div>
+
+                      <div className="job-det1">
+                        <div id="remote">{job.remote}</div>
+                        <div id="jobtype">{job.jobType}</div>
                       </div>
-                    ) : (
-                      ""
-                    )}
-                    <div id="view-but">
-                      <Link to={`/viewJob/${job._id}`}>
-                        <button>View details</button>
-                      </Link>
+                    </div>
+                    <div className="job-details2">
+                      <div>
+                        <img src={image3} alt="" />
+                      </div>
+                      <div id="location">{job.location}</div>
+                    </div>
+                    <div className="job-details3">
+                      <div className="skills">
+                        {job.skills.map((skill, index) => (
+                          <div key={index} className="skills-list">
+                            <div id="skills-list">{skill}</div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="job-buttons">
+                        {isLoggedIn ? (
+                          <div id="edit-but">
+                            <Link to={`/editJob/${job._id}`}>
+                              <button>Edit Job</button>
+                            </Link>
+                          </div>
+                        ) : (
+                          ""
+                        )}
+                        <div id="view-but">
+                          <Link to={`/viewJob/${job._id}`}>
+                            <button>View details</button>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-    </div>
-    ) : (
-      loading && <Spinner />
-    )}
+      ) : (
+        loading && <Spinner />
+      )}
     </>
   );
 };
